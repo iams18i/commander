@@ -29,6 +29,7 @@ dist
 
 # Docker
 docker/*
+!docker/.gitkeep
 
 # Debug
 npm-debug.log*
