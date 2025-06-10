@@ -6,7 +6,7 @@ A powerful CLI and job processing framework built with TypeScript. Commander pro
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/commander.git
+git clone https://github.com/iams18i/commander.git
 cd commander
 
 # Install dependencies
