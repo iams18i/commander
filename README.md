@@ -1,6 +1,25 @@
 # Commander
 
-A powerful CLI and job processing framework built with TypeScript.
+A powerful CLI and job processing framework built with TypeScript. Commander provides a robust foundation for building command-line applications with built-in support for background job processing, configuration management, and extensible command system.
+
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/commander.git
+cd commander
+
+# Install dependencies
+bun install
+
+# Start Redis (required for job processing)
+docker-compose up -d
+
+# Run the CLI
+bun run lark
+```
+
+That's it! You can now start creating commands and jobs.
 
 ## Project Structure
 
