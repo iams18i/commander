@@ -1,0 +1,22 @@
+{
+  "name": "@s18i/cli",
+  "version": "1.0.0",
+  "description": "CLI application",
+  "main": "index.ts",
+  "scripts": {
+    "start": "bun run index.ts",
+    "quirk": "bun run quirk.ts",
+    "build": "bun build index.ts --outfile lark.js"
+  },
+  "dependencies": {
+    "@s18i/lark": "*",
+    "cloudflare": "^4.2.0",
+    "config": "^3.3.12"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
