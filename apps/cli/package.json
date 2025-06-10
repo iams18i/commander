@@ -6,7 +6,10 @@
   "scripts": {
     "start": "bun run index.ts",
     "quirk": "bun run quirk.ts",
-    "build": "bun build index.ts --outfile lark.js"
+    "build": "tsc",
+    "dev": "tsc -w",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@s18i/lark": "*",
@@ -14,7 +17,12 @@
     "config": "^3.3.12"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "bun-types": "latest",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
