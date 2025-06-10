@@ -117,7 +117,7 @@ Commands are the building blocks of the CLI application. They are located in the
 The easiest way to create a new command is to use the built-in command generator:
 
 ```bash
-bun run cli command:add
+bun run lark command:add
 ```
 
 This will prompt you for:
@@ -216,7 +216,7 @@ await new MyJob().dispatchNow()
 
 3. Run the CLI:
    ```bash
-   bun run cli
+   bun run lark
    ```
 
 ## Available Commands
