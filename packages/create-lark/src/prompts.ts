@@ -164,7 +164,7 @@ export async function runPrompts(
       type: 'confirm',
       name: 'install',
       message: 'Install dependencies?',
-      initial: false,
+      initial: true,
     })
 
     results.install = installResponse.install

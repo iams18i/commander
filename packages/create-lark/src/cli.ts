@@ -49,7 +49,7 @@ Usage:
 Options:
   --template, -t    Template to use: default, api, library
   --git             Initialize git repository (default: true)
-  --install         Run package manager install after scaffolding
+  --install         Run package manager install after scaffolding (default: true)
   --yes, -y         Skip prompts, use defaults
   --dry-run         Preview without creating files
   --verbose         Show detailed output
@@ -153,7 +153,7 @@ export async function cli(args: string[]): Promise<void> {
     projectName: parsed.projectName,
     template: parsed.template,
     git: parsed.git ?? true,
-    install: parsed.install ?? false,
+    install: parsed.install ?? true,
     yes: parsed.yes ?? false,
     dryRun: parsed.dryRun ?? false,
     verbose: parsed.verbose ?? false,
@@ -168,7 +168,7 @@ export async function cli(args: string[]): Promise<void> {
     features: promptResults.features || [],
     packageManager: promptResults.packageManager || 'npm',
     git: promptResults.git ?? true,
-    install: promptResults.install ?? false,
+    install: promptResults.install ?? true,
     yes: partialOptions.yes ?? false,
     dryRun: partialOptions.dryRun ?? false,
     verbose: partialOptions.verbose ?? false,
