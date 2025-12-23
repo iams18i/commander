@@ -60,7 +60,7 @@ export async function runPrompts(
       features: [],
       packageManager: partialOptions.packageManager || 'npm',
       git: partialOptions.git ?? true,
-      install: partialOptions.install ?? false,
+      install: partialOptions.install ?? true,
     }
   }
 
@@ -158,19 +158,9 @@ export async function runPrompts(
     results.git = partialOptions.git
   }
 
-  // Install dependencies
-  if (partialOptions.install === undefined) {
-    const installResponse = await prompts({
-      type: 'confirm',
-      name: 'install',
-      message: 'Install dependencies?',
-      initial: true,
-    })
-
-    results.install = installResponse.install
-  } else {
-    results.install = partialOptions.install
-  }
+  // Install dependencies - default to true, only prompt if explicitly undefined
+  // Skip the prompt and default to true for better UX
+  results.install = partialOptions.install !== undefined ? partialOptions.install : true
 
   return results
 }

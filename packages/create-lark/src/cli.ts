@@ -21,13 +21,16 @@ export function parseArgs(args: string[]): ParsedArgs {
       h: 'help',
       v: 'version',
     },
+    default: {
+      install: true,
+    },
   })
 
   return {
     projectName: parsed._[0],
     template: parsed.template as Template | undefined,
     git: parsed.git,
-    install: parsed.install,
+    install: parsed.install !== undefined ? parsed.install : true,
     yes: parsed.yes,
     dryRun: parsed['dry-run'],
     verbose: parsed.verbose,
@@ -168,7 +171,7 @@ export async function cli(args: string[]): Promise<void> {
     features: promptResults.features || [],
     packageManager: promptResults.packageManager || 'npm',
     git: promptResults.git ?? true,
-    install: promptResults.install ?? true,
+    install: promptResults.install !== undefined ? promptResults.install : true,
     yes: partialOptions.yes ?? false,
     dryRun: partialOptions.dryRun ?? false,
     verbose: partialOptions.verbose ?? false,
