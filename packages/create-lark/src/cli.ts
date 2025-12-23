@@ -81,13 +81,25 @@ async function installDependencies(
   try {
     const { execSync } = await import('child_process')
     logger.step(`Installing dependencies with ${packageManager}...`)
-    execSync(`${packageManager} install`, {
+    
+    // Use appropriate install command for each package manager
+    let installCommand: string
+    if (packageManager === 'yarn') {
+      installCommand = 'yarn'
+    } else {
+      installCommand = `${packageManager} install`
+    }
+    
+    execSync(installCommand, {
       cwd: targetDir,
       stdio: 'inherit',
     })
     logger.success('Dependencies installed')
   } catch (error) {
     logger.warn('Failed to install dependencies')
+    if (error instanceof Error) {
+      logger.dim(error.message)
+    }
   }
 }
 
