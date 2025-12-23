@@ -25,5 +25,8 @@
   },
   "engines": {
     "bun": ">=1.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.s18i.io/"
   }
 }

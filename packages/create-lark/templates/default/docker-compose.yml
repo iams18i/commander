@@ -3,7 +3,7 @@ services:
     image: redis:latest
     container_name: redis_quirk
     ports:
-      - "6379:6379"
+      - '6379:6379'
     volumes:
       - redis_data:/data
       - ./docker/redis.conf:/usr/local/etc/redis/redis.conf
@@ -19,5 +19,4 @@ volumes:
 networks:
   redis-network:
     driver: bridge
-# cd /Users/sebastian/code/commander
-# node /Users/sebastian/code/commander/packages/create-lark/dist/index.js test
+

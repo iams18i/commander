@@ -1,0 +1,49 @@
+# PoC - Real-Time Behavioral Intelligence Layer for E-commerce using ClickHouse
+
+Create a real-time analytics layer that ingests and analyzes user behavioral data (clicks, views, add-to-cart, purchases) from an e-commerce platform using ClickHouse. This data will be used to power: - Real-time dashboards (internal stakeholders) - Customer behavior segments (marketing/product teams) - Smart triggers (e.g., abandoned cart reminders, trend-based recommendations) - Operational alerts (e.g., sudden spike/drop in product interest)
+
+## Architecture overview
+
+[Frontend Events / Backend APIs]
+↓
+[Event Queue / Click Collector]
+↓
+[ClickHouse (denormalized event storage)]
+↓
+[Realtime APIs / Dashboards / ML Features]
+
+## Components in Scope
+
+Event Stream Ingestion
+Track events like page view, click, add-to-cart. Optionally, use Kafka or simple HTTP collector.
+
+ClickHouse Setup
+Create schema (e.g., wide tables) for fast queries. Time-series focused structure with partitions and materialized views.
+
+Dashboards
+Example dashboard with metrics like funnel drop-off, product views, peak hours. Grafana or Superset.
+
+Behavior Segmentation
+Precompute segments like “high cart abandoners”, “recently active users”, “promo sensitive users”.
+
+Trigger System (optional)
+Generate alerts or send events to 3rd-party (email, Slack, etc.) when real-time rules match (e.g., trend spikes).
+
+ML Extension (stretch goal)
+Store features for real-time recommendation or personalized sorting.
+
+## Use Cases Demonstrated
+
+Real-time dashboard
+“Top viewed products this hour”
+
+Funnel breakdown
+“Cart-to-checkout conversion by category”
+
+Behavioral segments
+“Users who viewed >5 products in last 24h but didn’t purchase”
+
+Alerts
+“Send Slack alert if cart abandonment spikes 20% in an hour”
+
+Deliverables - clickable storefront - Working ClickHouse instance with example data - Basic dashboard (time series + funnel + segment views) - Event stream prototype (collector + sample ingestion) - Demo script + screenshots - Documentation with schema, queries, outcomes
